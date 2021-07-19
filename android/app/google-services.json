@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "888980028467",
+    "project_id": "portfolioapp-afaf3",
+    "storage_bucket": "portfolioapp-afaf3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:888980028467:android:7806117935d93973e27746",
+        "android_client_info": {
+          "package_name": "com.example.firebase_auth_api"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "888980028467-auel1j06dq4sbeb32993js3npa5ire6k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAOWReNEad_PLclO501SUEbmNkeK-FRb9c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "888980028467-auel1j06dq4sbeb32993js3npa5ire6k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
