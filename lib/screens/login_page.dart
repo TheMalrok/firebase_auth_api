@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:glass_kit/glass_kit.dart';
 import 'package:flutter/material.dart';
 
+bool _visibility = false;
+
 class LoginPage extends StatelessWidget {
   const LoginPage({Key? key}) : super(key: key);
 
@@ -13,11 +15,11 @@ class LoginPage extends StatelessWidget {
             decoration: const BoxDecoration(
                 image: DecorationImage(
                     image: NetworkImage(
-                        'https://cdn.wallpapersafari.com/72/55/hEO3LR.png'),
+                        'https://i.pinimg.com/474x/cd/80/c2/cd80c290c76cdf56cdd947ef10499081.jpg'),
                     fit: BoxFit.cover))),
         Center(
           child: GlassContainer(
-              height: 300,
+              height: 350,
               width: 350,
               gradient: LinearGradient(
                 colors: [
@@ -61,7 +63,7 @@ class GlassField extends StatelessWidget {
     return Column(
       children: [
         const Padding(
-          padding: const EdgeInsets.only(top: 20),
+          padding: EdgeInsets.only(top: 20),
           child: Text('Login',
               style: TextStyle(
                   fontSize: 40,
@@ -70,18 +72,32 @@ class GlassField extends StatelessWidget {
         ),
         Padding(
           padding: const EdgeInsets.fromLTRB(30, 10, 30, 0),
-          child: LoginTextFormField(),
+          child: loginTextFormField(),
         ),
         Padding(
           padding: const EdgeInsets.fromLTRB(30, 10, 30, 0),
-          child: PasswordTextFormField(),
+          child: passwordTextFormField(),
+        ),
+        Visibility(
+          visible: _visibility,
+          child: const Text(
+            'Wrong login or password. Reset Password',
+            style: TextStyle(color: Colors.red),
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.only(top: 15.0),
+          child: loginButton(),
         )
       ],
     );
   }
 
-  TextFormField LoginTextFormField() {
+  TextFormField loginTextFormField() {
     return TextFormField(
+      textAlign: TextAlign.center,
+      decoration: InputDecoration(
+          border: OutlineInputBorder(borderRadius: BorderRadius.circular(8.0))),
       validator: (value) {
         if (value == null || value.isEmpty) {
           return 'Please enter some text';
@@ -91,7 +107,25 @@ class GlassField extends StatelessWidget {
     );
   }
 
-  TextFormField PasswordTextFormField() {
-    return TextFormField();
+  TextFormField passwordTextFormField() {
+    return TextFormField(
+      textAlign: TextAlign.center,
+      decoration: InputDecoration(
+          border: OutlineInputBorder(borderRadius: BorderRadius.circular(8.0))),
+      obscureText: true,
+    );
+  }
+
+  TextButton loginButton() {
+    return TextButton(
+      style: TextButton.styleFrom(
+        backgroundColor: Colors.white24,
+        padding: const EdgeInsets.fromLTRB(40.0, 10.0, 40.0, 10.0),
+        primary: Colors.white,
+        textStyle: const TextStyle(fontSize: 20),
+      ),
+      onPressed: () {},
+      child: const Text('Sign In'),
+    );
   }
 }
